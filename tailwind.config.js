@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'serif': ['Merriweather', 'serif'],
-        'sans': ['Merriweather Sans', 'sans-serif'],
+        'merriweather': ['Merriweather', 'serif'],
+        'merriweather-sans': ['Merriweather Sans', 'sans-serif'],
       },
       fontSize: {
         'display': ['4rem', { lineHeight: '1.2', fontWeight: '700' }],      // 64px - Hero/Display text

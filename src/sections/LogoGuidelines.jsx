@@ -3,29 +3,8 @@ import { LogoUsage } from './LogoUsage';
 
 export const LogoGuidelines = () => (
   <div className="space-y-6">
-    <div className="bg-white p-6 rounded-lg shadow-md">
-      <h4 className="text-h4 mb-4 text-primary">Size Specifications</h4>
-      <div className="grid md:grid-cols-2 gap-6">
-        <div>
-          <h5 className="text-h5 mb-2">Minimum Sizes</h5>
-          <ul className="list-disc pl-5 space-y-2 text-body">
-            <li>Digital: 100px width</li>
-            <li>Print: 1 inch width</li>
-          </ul>
-        </div>
-        <div>
-          <h5 className="text-h5 mb-2">Clear Space Guide</h5>
-          <ul className="list-disc pl-5 space-y-2 text-body">
-            <li>Base height: Standard logo is 40px tall</li>
-            <li>'e' height: 12px at standard size</li>
-            <li>Clear space: 12px on all sides (1 'e' height)</li>
-            <li>Scale proportionally for other sizes</li>
-          </ul>
-        </div>
-      </div>
-    </div>
 
-    <h3 className="text-h3">Logo Guidelines</h3>
+    <h3 className="text-h3">Usage Guidelines</h3>
 
     <div className="grid md:grid-cols-2 gap-6">
       <div className="bg-white p-6 rounded-lg shadow-md">
