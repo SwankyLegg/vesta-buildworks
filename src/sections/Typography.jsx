@@ -1,4 +1,5 @@
 import React from 'react';
+import GetFont from '../components/GetFont';
 
 const Typography = () => {
   return (
@@ -10,7 +11,10 @@ const Typography = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {/* Merriweather */}
           <div className="bg-white p-8 rounded-lg shadow-md">
-            <h3 className="text-h3 mb-4 font-merriweather">Merriweather</h3>
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-h3 font-merriweather">Merriweather</h3>
+              <GetFont fontName="Merriweather" />
+            </div>
             <p className="text-lead mb-6 text-gray-600">Primary Serif Typeface</p>
             <div className="space-y-4">
               <p className="font-merriweather font-light">Light (300) - Merriweather Light</p>
@@ -22,7 +26,10 @@ const Typography = () => {
 
           {/* Merriweather Sans */}
           <div className="bg-white p-8 rounded-lg shadow-md">
-            <h3 className="text-h3 mb-4 font-merriweather-sans">Merriweather Sans</h3>
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-h3 font-merriweather-sans">Merriweather Sans</h3>
+              <GetFont fontName="Merriweather Sans" />
+            </div>
             <p className="text-lead mb-6 text-gray-600">Primary Sans-Serif Typeface</p>
             <div className="space-y-4">
               <p className="font-merriweather-sans font-light">Light (300) - Merriweather Sans Light</p>

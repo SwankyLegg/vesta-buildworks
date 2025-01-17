@@ -12,6 +12,7 @@
     "start": "vite"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "@radix-ui/react-slot": "^1.1.1",
     "file-saver": "^2.0.5",
     "jszip": "^3.10.1",

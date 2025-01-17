@@ -1,12 +1,11 @@
 import React from 'react';
-import JSZip from 'jszip';
-import { saveAs } from 'file-saver';
 import vestaWordmark from '../assets/vesta_wordmark.svg';
 import vestaWordmarkMono from '../assets/vesta_wordmark_mono.svg';
 import vestaWordmarkMonoInverse from '../assets/vesta_wordmark_mono_inverse.svg';
 import vestaLogo from '../assets/vesta_logo.svg';
 import vestaLogoMono from '../assets/vesta_logo_mono.svg';
 import vestaLogoMonoInverse from '../assets/vesta_logo_mono_inverse.svg';
+import { DownloadButton } from './DownloadButton';
 
 export const LogoDownloads = () => {
   const wordmarkLogos = [
@@ -21,23 +20,6 @@ export const LogoDownloads = () => {
     { name: 'vesta_logo_mono_inverse.svg', url: vestaLogoMonoInverse },
   ];
 
-  const downloadZip = async (files, zipName) => {
-    try {
-      const zip = new JSZip();
-
-      for (const file of files) {
-        const response = await fetch(file.url);
-        const blob = await response.blob();
-        zip.file(file.name, blob);
-      }
-
-      const content = await zip.generateAsync({ type: 'blob' });
-      saveAs(content, zipName);
-    } catch (error) {
-      console.error('Error creating zip file:', error);
-    }
-  };
-
   return (
     <div className="space-y-4">
       <h3 className="text-lg font-semibold">Download Assets</h3>
@@ -45,33 +27,27 @@ export const LogoDownloads = () => {
         <div className="bg-gray-100 p-4 rounded-lg">
           <h4 className="text-sm font-medium mb-2">Wordmark Package</h4>
           <p className="text-sm text-gray-600 mb-3">Includes full color, monochrome, and inverse wordmark variations</p>
-          <button
-            onClick={() => downloadZip(wordmarkLogos, 'vesta-wordmarks.zip')}
-            className="w-full px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-          >
+          <DownloadButton files={wordmarkLogos} zipName="vesta-wordmarks.zip">
             Download Wordmarks (ZIP)
-          </button>
+          </DownloadButton>
         </div>
         <div className="bg-gray-100 p-4 rounded-lg">
           <h4 className="text-sm font-medium mb-2">Logo Package</h4>
           <p className="text-sm text-gray-600 mb-3">Includes full color, monochrome, and inverse logo variations</p>
-          <button
-            onClick={() => downloadZip(symbolLogos, 'vesta-logos.zip')}
-            className="w-full px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-          >
+          <DownloadButton files={symbolLogos} zipName="vesta-logos.zip">
             Download Logos (ZIP)
-          </button>
+          </DownloadButton>
         </div>
       </div>
       <div className="bg-gray-100 p-4 rounded-lg">
         <h4 className="text-sm font-medium mb-2">Complete Asset Package</h4>
         <p className="text-sm text-gray-600 mb-3">Download all Vesta brand assets including wordmarks and logos in all variations</p>
-        <button
-          onClick={() => downloadZip([...wordmarkLogos, ...symbolLogos], 'vesta-all-assets.zip')}
-          className="w-full px-4 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+        <DownloadButton
+          files={[...wordmarkLogos, ...symbolLogos]}
+          zipName="vesta-all-assets.zip"
         >
           Download All Assets (ZIP)
-        </button>
+        </DownloadButton>
       </div>
     </div>
   );
