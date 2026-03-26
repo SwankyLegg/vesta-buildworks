@@ -1,9 +1,7 @@
 import React from 'react';
-import { LogoUsage } from './LogoUsage';
 
 export const LogoGuidelines = () => (
-  <div className="space-y-6">
-
+  <>
     <h3 className="text-h3">Usage Guidelines</h3>
 
     <div className="grid md:grid-cols-2 gap-6">
@@ -28,5 +26,5 @@ export const LogoGuidelines = () => (
         </ul>
       </div>
     </div>
-  </div>
-); 
+  </>
+);

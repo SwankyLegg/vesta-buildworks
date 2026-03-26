@@ -1,8 +1,9 @@
 import React from 'react';
 import { BrandValueCard } from '../components/BrandValueCard';
+import { Section } from '../components/Section';
 
 export const BrandValues = () => (
-  <section className="space-y-4">
+  <Section>
     <h2 className="text-h2">Brand Values</h2>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
       <BrandValueCard
@@ -18,5 +19,5 @@ export const BrandValues = () => (
         description="Maintaining high standards while remaining accessible and welcoming"
       />
     </div>
-  </section>
-); 
+  </Section>
+);

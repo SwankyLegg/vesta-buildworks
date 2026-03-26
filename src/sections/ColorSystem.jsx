@@ -1,8 +1,9 @@
 import React from 'react';
+import { Section } from '../components/Section';
 import MonochromaticPalette from './Palette';
 
 export const ColorSystem = () => (
-  <section className="space-y-8">
+  <Section>
     <div>
       <h2 className="text-h2">Color System</h2>
       <p className="text-lead text-gray-600 mt-2">Our color system is built on a sophisticated monochromatic palette that ensures consistency and accessibility across all brand touchpoints.</p>
@@ -32,5 +33,5 @@ export const ColorSystem = () => (
         </ul>
       </div>
     </div>
-  </section>
-); 
+  </Section>
+);

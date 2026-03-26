@@ -1,9 +1,10 @@
 import React from 'react';
+import { SectionStack } from '../components/Section';
 import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/card';
 import ColorCard from '../components/ColorCard';
 
 const ColorGroup = ({ title, description, colors }) => (
-  <div className="space-y-4">
+  <SectionStack>
     <div>
       <h3 className="text-h3">{title}</h3>
       <p className="text-lead text-gray-600">{description}</p>
@@ -13,7 +14,7 @@ const ColorGroup = ({ title, description, colors }) => (
         <ColorCard key={i} color={color} />
       ))}
     </div>
-  </div>
+  </SectionStack>
 );
 
 const slateColors = [
@@ -136,33 +137,34 @@ const neutralColors = [
 
 const MonochromaticPalette = () => {
   return (
-    <div className="w-full max-w-6xl mx-auto space-y-8">
+    <div className="w-full max-w-6xl mx-auto">
+      <SectionStack>
+        <ColorGroup
+          title="Slate Blues"
+          description="Primary brand colors for key interface elements and emphasis"
+          colors={slateColors}
+        />
 
-      <ColorGroup
-        title="Slate Blues"
-        description="Primary brand colors for key interface elements and emphasis"
-        colors={slateColors}
-      />
+        <ColorGroup
+          title="Neutrals"
+          description="Supporting grayscale for typography and UI elements"
+          colors={neutralColors}
+        />
 
-      <ColorGroup
-        title="Neutrals"
-        description="Supporting grayscale for typography and UI elements"
-        colors={neutralColors}
-      />
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Accessibility Notes</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ul className="text-body space-y-2">
-            <li>• Slate 900 on White: 12:1 contrast ratio (AAA)</li>
-            <li>• Gray 600 on Slate 200: 7:1 contrast ratio (AAA)</li>
-            <li>• Slate 700 on White: 4.5:1 contrast ratio (AA)</li>
-            <li>• White text on Slate 700: 4.5:1 contrast ratio (AA)</li>
-          </ul>
-        </CardContent>
-      </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle>Accessibility Notes</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ul className="text-body space-y-2">
+              <li>• Slate 900 on White: 12:1 contrast ratio (AAA)</li>
+              <li>• Gray 600 on Slate 200: 7:1 contrast ratio (AAA)</li>
+              <li>• Slate 700 on White: 4.5:1 contrast ratio (AA)</li>
+              <li>• White text on Slate 700: 4.5:1 contrast ratio (AA)</li>
+            </ul>
+          </CardContent>
+        </Card>
+      </SectionStack>
     </div>
   );
 };
